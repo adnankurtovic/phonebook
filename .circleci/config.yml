@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
@@ -8,7 +8,13 @@ jobs:
       - checkout
 
       - run: sudo apt update # PHP CircleCI 2.0 Configuration File# PHP CircleCI 2.0 Configuration File sudo apt install zlib1g-dev libsqlite3-dev
-      - run: sudo docker-php-ext-install zip
+      - run:
+         name: Install PHP libzip-dev
+         command: sudo apt-get install -y libzip-dev
+
+      - run:
+         name: Install PHP zip
+         command: sudo docker-php-ext-install zip
 
       # Download and cache dependencies
       - restore_cache:
