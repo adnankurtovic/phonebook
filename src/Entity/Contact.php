@@ -15,7 +15,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ContactRepository::class)]
 #[
-    ApiResource,
+    ApiResource(
+        attributes: ["pagination_items_per_page" => 5]
+    ),
     ApiFilter(
         SearchFilter::class,
         properties: [
