@@ -5,10 +5,11 @@
 
 TODO
 
-   - Complete CircleCI integration (setup mysql)
+   - Complete CircleCI integration (mysql setup is not finished)
    - Write more tests
    - Handle file upload for photo
-   - Make more endpoints for easier usage
+   - Create additional endpoints
+   - Take care of access control
 
 
 INFO
