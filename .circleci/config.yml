@@ -3,6 +3,9 @@ jobs:
   build:
     docker:
       - image: cimg/php:8.1.0
+      - image: cimg/mysql:8.0.27
+        environment:
+          MYSQL_DATABASE: phonebook
 
     steps:
       - checkout
@@ -11,7 +14,6 @@ jobs:
       - run:
          name: Install PHP libzip-dev
          command: sudo apt-get install -y libzip-dev
-      - run: sudo apt install mysql-server
 
       # Download and cache dependencies
       - restore_cache:
